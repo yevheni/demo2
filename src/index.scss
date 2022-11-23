@@ -6,10 +6,16 @@ html {
 
 body {
 	background-color: $bg_color;
+	font-size: 1.2rem;
+	color: transparentize(black, 0.25);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
+}
+
+p {
+	margin: 0 0 1rem 0;
 }
 
 .container {
@@ -18,13 +24,25 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5rem;
 }
 
+.flex {
+	display: flex;
+}
+
+.section {
+	padding: 1rem;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
 .card {
 	background: white;
 	padding: 1rem;
 	border-radius: 0.5rem;
 	margin: auto;
 
-	h6 {
+	h5 {
 		font-size: 1.2rem;
 		font-weight: bold;
 		color: $label_color;
@@ -32,8 +50,11 @@ h1, h2, h3, h4, h5, h6 {
 		text-transform: uppercase;
 		margin-bottom: 1rem;
 	}
+}
 
-	.section {
-		padding: 1rem;
+#circle {
+	svg {
+		display: block;
+		width: 100px;
 	}
 }
