@@ -9,13 +9,7 @@
 		"build": "webpack --config webpack.config.js --mode production"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.20.1",
-		"bootstrap": "^5.2.3",
-		"vue": "^3.2.45",
-		"vue-class-component": "^8.0.0-rc.1",
-		"vue-property-decorator": "^10.0.0-rc.3",
-		"vue-router": "^4.1.6",
-		"vuex": "^4.1.0"
+		"@babel/runtime": "^7.20.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.19.3",

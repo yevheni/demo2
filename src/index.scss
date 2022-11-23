@@ -1,6 +1,39 @@
-@import "~bootstrap/scss/bootstrap";
-
 html {
-	font-size: 20px;
+	font-size: 10px;
 	word-break: break-word;
+	font-family: sans-serif;
+}
+
+body {
+	background-color: $bg_color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5rem;
+}
+
+.card {
+	background: white;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin: auto;
+
+	h6 {
+		font-size: 1.2rem;
+		font-weight: bold;
+		color: $label_color;
+		line-height: 1;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+
+	.section {
+		padding: 1rem;
+	}
 }

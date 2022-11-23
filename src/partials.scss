@@ -1,25 +1,2 @@
-/** Bootstrap colors overrides */
-$primary: #4990e2;
-$info: #7DB0EA;
-
-/** Colors */
-$transparent: transparentize(white, 1);
-
-$custom-colors: (
-	"primary": $primary,
-	"info": $info,
-
-	// Custom
-);
-
-$enable-negative-margins: true;
-
-$link-decoration: none;
-
-$body-bg: #282c4c;
-
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
-$theme-colors: map-merge($theme-colors, $custom-colors);
+$label_color: #7DB0EA;
+$bg_color: #282c4c;
