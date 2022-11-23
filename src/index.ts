@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", e => {
 </svg>`
 	}
 
-	const circle = document.querySelector("#circle");
+	const circle = document.querySelector("#circle .svg");
 
 	circle.innerHTML = parseSvg(43);
 })
