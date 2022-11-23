@@ -6,6 +6,11 @@ import {Options, Vue} from "vue-class-component";
 	template,
 })
 export class App extends Vue {
+	get info() {
+		return {
+			title: "Pedro's weekly goal",
+		}
+	}
 
 	/** Lifecycle */
 	created() {

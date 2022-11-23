@@ -1,3 +1,16 @@
 .app-component {
+	.app-card {
+		background: white;
+		padding: 10px;
+		border-radius: 5px;
+		margin: auto;
 
+		h6 {
+			font-size: 12px;
+			font-weight: bold;
+			color: $info;
+			line-height: 1;
+			text-transform: uppercase;
+		}
+	}
 }

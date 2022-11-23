@@ -1,11 +1,13 @@
 /** Bootstrap colors overrides */
-$primary: #4d41c2;
+$primary: #4990e2;
+$info: #7DB0EA;
 
 /** Colors */
 $transparent: transparentize(white, 1);
 
 $custom-colors: (
 	"primary": $primary,
+	"info": $info,
 
 	// Custom
 );
@@ -13,6 +15,8 @@ $custom-colors: (
 $enable-negative-margins: true;
 
 $link-decoration: none;
+
+$body-bg: #282c4c;
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
