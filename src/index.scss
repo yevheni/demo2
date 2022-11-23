@@ -34,6 +34,14 @@ p {
 	margin: 0 0 1rem 0;
 }
 
+select {
+	background-color: darken(white, 5);
+	border: 1px solid darken(white, 20);
+	padding: 0.75rem 2rem 0.75rem 1rem;
+	border-radius: $border_radius;
+	appearance: none;
+	cursor: pointer;
+}
 
 /** Helpers */
 .container {
@@ -72,6 +80,15 @@ p {
 
 .small {
 	font-size: 0.85em;
+}
+
+.grow-1 {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+.align-items-center {
+	align-items: center;
 }
 
 
