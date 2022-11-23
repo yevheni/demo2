@@ -6,7 +6,7 @@
 		S 7,52.2,7,108
 		c 0,28.9,12.1,54.9,31.5,73.3">
 	</path>
-	<path fill="none" stroke="#4990e2" stroke-dasharray="0, 490" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	<path transform="scale(-1 1) translate(-216.1 0)" fill="none" stroke="#4990e2" stroke-dasharray="0 490" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M 177.5, 181.4
 		c 19.4-18.4, 31.5-44.5, 31.5-73.3
 		c 0-55.8-45.2-101-101-101
