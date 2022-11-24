@@ -83,6 +83,10 @@ select {
 	margin-bottom: 1rem !important;
 }
 
+.mt-2 {
+	margin-top: 1rem !important;
+}
+
 .opacity-75 {
 	opacity: 0.75;
 }
@@ -156,5 +160,37 @@ select {
 		width: 100%;
 		text-align: center;
 		bottom: 0.5rem;
+	}
+}
+
+.list {
+	.item {
+		background-color: #ffffff;
+		padding: 1.25rem;
+		border-radius: $border_radius;
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		box-shadow: 0 0 0.5rem -0.2rem $dark_grey;
+		margin-top: 0.25rem;
+		font-size: 1.6rem;
+
+		.count {
+			color: $dark_grey;
+			//font-size: 1.4rem;
+			border: 1px solid $dark_grey;
+			border-radius: 3rem;
+			padding: 0.5rem 0.9rem;
+			line-height: 1;
+			font-weight: bold;
+		}
+
+		.icon {
+			$size: 1.25rem;
+			width: $size;
+			height: $size;
+			border-radius: $size;
+			background-color: $grey;
+		}
 	}
 }
