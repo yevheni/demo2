@@ -1,3 +1,5 @@
+@import "helpers";
+
 html {
 	font-size: 10px;
 	word-break: break-word;
@@ -11,8 +13,7 @@ html {
 body {
 	color: $dark;
 	background-color: $dark_blue;
-	font-size: 1.4rem;
-	//color: transparentize(black, 0.25);
+	font-size: 1.2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,15 +21,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h6 {
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 h5 {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 
 h4 {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 }
 
 h3 {
@@ -56,66 +57,6 @@ select {
 	background-image: url("./assets/img/arrow-down.svg"), linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,242,246,1) 100%);
 }
 
-/** Helpers */
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 5rem 1rem;
-}
-
-.flex {
-	display: flex;
-}
-
-.section {
-	padding: 1rem;
-}
-
-.mb-0 {
-	margin-bottom: 0 !important;
-}
-
-.mb-1 {
-	margin-bottom: 0.5rem !important;
-}
-
-.mb-2 {
-	margin-bottom: 1rem !important;
-}
-
-.mt-2 {
-	margin-top: 1rem !important;
-}
-
-.opacity-75 {
-	opacity: 0.75;
-}
-
-.opacity-50 {
-	opacity: 0.5;
-}
-
-.small {
-	font-size: 0.85em;
-}
-
-.grow-1 {
-	flex-grow: 1;
-	flex-basis: 0;
-}
-
-.align-items-center {
-	align-items: center;
-}
-
-.lighter {
-	font-weight: lighter;
-}
-
-.text-left {
-	text-align: left;
-}
-
 /** Elements */
 .card {
 	background: #ffffff;
@@ -125,8 +66,7 @@ select {
 	max-width: 375px;
 
 	.label {
-		//font-weight: 600;
-		color: $blue;
+		color: mix($blue, $white, 80%);
 		text-transform: uppercase;
 	}
 
@@ -149,12 +89,12 @@ select {
 
 #circle {
 	position: relative;
-	margin-right: 1.5rem;
+	margin-right: 2rem;
 
 	.svg {
 		svg {
 			display: block;
-			width: 100px;
+			width: 10rem;
 		}
 	}
 
@@ -162,7 +102,7 @@ select {
 		position: absolute;
 		width: 100%;
 		text-align: center;
-		bottom: 0.5rem;
+		top: 4rem;
 	}
 }
 
@@ -190,7 +130,7 @@ select {
 		}
 
 		.icon {
-			$size: 1.25rem;
+			$size: 1.5rem;
 			width: $size;
 			height: $size;
 			border-radius: $size;
