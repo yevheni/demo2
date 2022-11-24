@@ -45,6 +45,7 @@ p {
 }
 
 select {
+	color: $dark;
 	border: 1px solid $grey;
 	padding: 0.75rem 4rem 0.75rem 1rem;
 	border-radius: $border_radius;
@@ -55,6 +56,10 @@ select {
 	background-position: center right 0.5rem, center;
 	background-color: white;
 	background-image: url("./assets/img/arrow-down.svg"), linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,242,246,1) 100%);
+}
+
+button {
+	color: $dark;
 }
 
 /** Elements */
