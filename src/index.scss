@@ -9,8 +9,9 @@ html {
 }
 
 body {
-	background-color: $bg_color;
-	font-size: 1.2rem;
+	color: $dark;
+	background-color: $dark_blue;
+	font-size: 1.4rem;
 	//color: transparentize(black, 0.25);
 }
 
@@ -18,16 +19,24 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 1rem 0;
 }
 
-h5 {
+h6 {
 	font-size: 1.2rem;
 }
 
+h5 {
+	font-size: 1.4rem;
+}
+
 h4 {
-	font-size: 1.6rem;
+	font-size: 1.8rem;
+}
+
+h3 {
+	font-size: 2.6rem;
 }
 
 h2 {
-	font-size: 2.8rem;
+	font-size: 3rem;
 }
 
 p {
@@ -35,8 +44,7 @@ p {
 }
 
 select {
-	border: 1px solid #DCDDE5;
-	color: #4D5868;
+	border: 1px solid $grey;
 	padding: 0.75rem 4rem 0.75rem 1rem;
 	border-radius: $border_radius;
 	appearance: none;
@@ -44,7 +52,7 @@ select {
 	background-repeat: no-repeat, repeat;
 	background-size: 1.5rem;
 	background-position: center right 0.5rem, center;
-	background-color: rgb(255,255,255);
+	background-color: white;
 	background-image: url("./assets/img/arrow-down.svg"), linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,242,246,1) 100%);
 }
 
@@ -96,22 +104,23 @@ select {
 	align-items: center;
 }
 
+.lighter {
+	font-weight: lighter;
+}
+
 
 /** Elements */
 .card {
-	background: white;
+	background: #ffffff;
 	padding: 1rem;
 	border-radius: $border_radius;
 	margin: auto;
 	max-width: 375px;
 
 	.label {
-		//font-size: 1.2rem;
-		font-weight: bold;
-		color: $label_color;
-		//line-height: 1;
+		//font-weight: 600;
+		color: $blue;
 		text-transform: uppercase;
-		//margin-bottom: 1rem;
 	}
 
 	.info {
@@ -120,20 +129,12 @@ select {
 			gap: 0.5rem;
 
 			.tab {
-				background-color: $tab_color;
+				background-color: $light;
 				border-radius: $border_radius;
-				padding: 1rem;
+				padding: 1rem 0.5rem;
 				text-align: center;
 				flex-grow: 1;
 				flex-basis: 0;
-
-				.tab-label {
-					margin-bottom: 0.5rem;
-				}
-
-				.tab-text {
-					font-size: 1rem;
-				}
 			}
 		}
 	}
@@ -154,6 +155,6 @@ select {
 		position: absolute;
 		width: 100%;
 		text-align: center;
-		bottom: 0;
+		bottom: 0.5rem;
 	}
 }
