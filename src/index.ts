@@ -1,39 +1,181 @@
 import "./index.scss";
 
+const data = [
+	{
+		id: "week",
+		label: "Week",
+		minutes: {
+			current: 38,
+			more: 12,
+		},
+		streak: {
+			current: 4,
+			best: 12,
+		},
+		list: [
+			{
+				name: "Walter Wynne",
+				minutes: 105,
+				status: "up",
+			},
+			{
+				name: "Annabel Ferdinand",
+				minutes: 52,
+				status: "",
+			},
+			{
+				name: "Marty MvFly",
+				minutes: 50,
+				status: "up",
+			},
+			{
+				name: "You!",
+				minutes: 38,
+				status: "up",
+				is_me: true,
+			},
+		]
+	},
+	{
+		id: "month",
+		label: "Month",
+		minutes: {
+			current: 12,
+			more: 186,
+		},
+		streak: {
+			current: 7,
+			best: 44,
+		},
+		list: [
+			{
+				name: "Annabel Ferdinand",
+				minutes: 45,
+				status: "",
+			},
+			{
+				name: "Walter Wynne",
+				minutes: 2,
+				status: "up",
+			},
+			{
+				name: "You!",
+				minutes: 12,
+				status: "up",
+				is_me: true,
+			},
+			{
+				name: "Marty MvFly",
+				minutes: 56,
+				status: "",
+			},
+		]
+	},
+]
+
+type Data = typeof data;
+
 window.addEventListener("DOMContentLoaded", e => {
 	// console.log("loaded")
 
-	function parseSvg(value: number) {
+	function setCircleValue(svg: SVGElement, value: number) {
 		const circleMax = 50;
 		const circleRatio = value / circleMax;
 
+		/** Parse stroke-dasharray */
 		const strokeMax = 490;
 		const strokeValue = Math.round(circleRatio * strokeMax);
 		const strokeDasharray = `${strokeValue} ${strokeMax}`
 
-		return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	      viewBox="0 0 216.1 188.4" enable-background="new 0 0 216.1 188.4"
-	     xml:space="preserve">
-	<path fill="none" stroke="#dfe3e9" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
-	      stroke-miterlimit="14" d="
-		M 177.5, 181.4
-		c 19.4-18.4, 31.5-44.5, 31.5-73.3
-		c 0-55.8-45.2-101-101-101
-		S 7,52.2,7,108
-		c 0,28.9,12.1,54.9,31.5,73.3">
-	</path>
-		<path transform="scale(-1 1) translate(-216.1 0)" fill="none" stroke="#4990e2" stroke-dasharray="${strokeDasharray}"
-		      stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="14" d="
-		M 177.5, 181.4
-		c 19.4-18.4, 31.5-44.5, 31.5-73.3
-		c 0-55.8-45.2-101-101-101
-		S 7,52.2,7,108
-		c 0,28.9,12.1,54.9,31.5,73.3">
-	</path>
-</svg>`
+		/** Get svg path */
+		const activePath = svg.querySelector(".active") as SVGPathElement;
+
+		/** Set stroke-dasharray */
+		activePath.style.strokeDasharray = strokeDasharray;
 	}
 
-	const circle = document.querySelector("#circle .svg");
+	function fillData(data: Data, index: number) {
+		const dataItem = data[index];
 
-	circle.innerHTML = parseSvg(43);
+		/** Get elements */
+		const circleSvg = document.querySelector("#circle .svg svg") as SVGElement;
+		const minutesCurrent = document.querySelector("#minutes_current");
+		const minutesMore = document.querySelector("#minutes_more");
+		const streakCurrent = document.querySelector("#streak_current");
+		const streakBest = document.querySelector("#streak_best");
+		const list = document.querySelector("#list");
+		const listItem = document.querySelector("#list_item_template");
+
+		/** Set circle values */
+		setCircleValue(circleSvg, dataItem.minutes.current);
+		minutesCurrent.innerHTML = `${dataItem.minutes.current}m`;
+
+		/** Set minutes from circle right side info section */
+		minutesMore.innerHTML = `${dataItem.minutes.more}`;
+
+		/** Set streak values */
+		streakCurrent.innerHTML = `${dataItem.streak.current}`;
+		streakBest.innerHTML = `${dataItem.streak.best}`;
+
+		/** Clear list items */
+		list.innerHTML = ""
+
+		/** Set list items */
+		dataItem.list.forEach((el, i) => {
+			const clone = listItem.cloneNode(true) as HTMLElement;
+
+			clone.id = "";
+
+			/** Set list item data */
+			const count = clone.querySelector(".count");
+			const name = clone.querySelector(".name");
+			const result = clone.querySelector(".result");
+			const icon = clone.querySelector(".icon");
+
+			count.innerHTML = `${i + 1}`;
+			name.innerHTML = el.name;
+			result.innerHTML = `${el.minutes}m`;
+
+			if (el.status) {
+				icon.classList.add(el.status);
+			}
+
+			if (el.is_me) {
+				clone.classList.add("me");
+			}
+
+			/** Append item to list */
+			list.append(clone);
+		});
+	}
+
+	const startIndex = 0;
+
+	/** Set leaderboard select options and value */
+	const leaderboardSelect = document.querySelector("#leaderboard_select") as HTMLSelectElement;
+
+	data.forEach(el => {
+		const option = document.createElement("option") as HTMLOptionElement;
+
+		option.value = el.id;
+		option.text = el.label;
+
+		leaderboardSelect.options.add(option);
+	});
+
+	leaderboardSelect.value = data[startIndex].id;
+
+	/** Set leaderboard select change listener */
+	leaderboardSelect.onchange = e => {
+		const index = data.findIndex(el => el.id === leaderboardSelect.value);
+
+		// console.log(index)
+
+		if (index !== -1) {
+			fillData(data, index);
+		}
+	}
+
+	/** Fill data */
+	fillData(data, startIndex);
 })

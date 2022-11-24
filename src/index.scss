@@ -95,6 +95,14 @@ select {
 		svg {
 			display: block;
 			width: 10rem;
+
+			.bg {
+				stroke: $grey;
+			}
+
+			.active {
+				stroke: $blue;
+			}
 		}
 	}
 
@@ -104,6 +112,10 @@ select {
 		text-align: center;
 		top: 4rem;
 	}
+}
+
+#list_item_template {
+	display: none;
 }
 
 .list {
@@ -137,18 +149,7 @@ select {
 			background-color: $grey;
 		}
 
-		&:hover {
-			cursor: pointer;
-			background-color: $dark_grey;
-			color: $white;
-
-			.count {
-				color: $white;
-				border-color: $white;
-			}
-		}
-
-		&.active {
+		&.up, &.me {
 			.count {
 				color: $green;
 				border-color: $green;
@@ -165,18 +166,19 @@ select {
 				background-position: center;
 				background-size: contain;
 			}
+		}
 
-			&:hover {
-				background-color: $green;
+		&.me {
+			color: $white;
+			background-color: $green;
 
-				.count {
-					color: $white;
-					border-color: $white;
-				}
+			.count {
+				color: $white;
+				border-color: $white;
+			}
 
-				.icon {
-					background-image: url("assets/img/arrow-up-white.svg");
-				}
+			.icon {
+				background-image: url("assets/img/arrow-up-white.svg");
 			}
 		}
 	}

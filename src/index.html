@@ -19,15 +19,45 @@
 
 				<div class="flex mb-2">
 					<div id="circle">
-						<div class="svg section"></div>
+						<div class="svg section">
+							<svg
+								version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								viewBox="0 0 216.1 188.4" enable-background="new 0 0 216.1 188.4"
+								xml:space="preserve"
+							>
+								<path
+									class="bg" fill="none" stroke-width="14" stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-miterlimit="14"
+									d="
+		M 177.5, 181.4
+		c 19.4-18.4, 31.5-44.5, 31.5-73.3
+		c 0-55.8-45.2-101-101-101
+		S 7,52.2,7,108
+		c 0,28.9,12.1,54.9,31.5,73.3"
+								></path>
+								<path
+									class="active" transform="scale(-1 1) translate(-216.1 0)" fill="none"
+									stroke-dasharray="0 490"
+									stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="14" d="
+		M 177.5, 181.4
+		c 19.4-18.4, 31.5-44.5, 31.5-73.3
+		c 0-55.8-45.2-101-101-101
+		S 7,52.2,7,108
+		c 0,28.9,12.1,54.9,31.5,73.3"
+								></path>
+							</svg>
+						</div>
 
 						<div class="info">
 							<h6 class="opacity-50 mb-0">
 								Current
 							</h6>
 
-							<h3 class="lighter mb-2">
-								38m
+							<h3 id="minutes_current" class="lighter mb-2">
+								0m
 							</h3>
 
 							<h6 class="">
@@ -38,13 +68,14 @@
 
 					<div class="section info">
 						<p>
-							<b>12</b> <span class="opacity-75">more mins. to achieve this. week's Goal.</span>
+							<b id="minutes_more">0</b> <span
+							class="opacity-75">more mins. to achieve this. week's Goal.</span>
 						</p>
 
 						<div class="tabs">
 							<div class="tab">
-								<h4 class="mb-1">
-									4
+								<h4 id="streak_current" class="mb-1">
+									0
 								</h4>
 
 								<h6 class="opacity-75 mb-0">
@@ -53,8 +84,8 @@
 							</div>
 
 							<div class="tab">
-								<h4 class="mb-1">
-									12
+								<h4 id="streak_best" class="mb-1">
+									0
 								</h4>
 
 								<h6 class="opacity-75 mb-0">
@@ -70,33 +101,26 @@
 						Leaderboard
 					</h5>
 
-					<select>
-						<option value="week">
-							Week
-						</option>
-						<option value="month">
-							Month
-						</option>
-					</select>
+					<select id="leaderboard_select"></select>
 				</div>
 
-				<div class="list">
-					<button type="button" class="item">
-						<span class="count">
-							1
-						</span>
+				<div id="list" class="list"></div>
 
-						<b class="name text-left grow-1">
-							Walter Wynne
-						</b>
+				<button id="list_item_template" type="button" class="item">
+					<span class="count">
+						0
+					</span>
 
-						<span class="result">
-							105m
-						</span>
+					<b class="name text-left grow-1">
+						-
+					</b>
 
-						<span class="icon"></span>
-					</button>
-				</div>
+					<span class="result">
+						0m
+					</span>
+
+					<span class="icon"></span>
+				</button>
 			</div>
 		</div>
 	</body>
