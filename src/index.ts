@@ -130,14 +130,13 @@ window.addEventListener("DOMContentLoaded", e => {
 			const count = clone.querySelector(".count");
 			const name = clone.querySelector(".name");
 			const result = clone.querySelector(".result");
-			const icon = clone.querySelector(".icon");
 
 			count.innerHTML = `${i + 1}`;
 			name.innerHTML = el.name;
 			result.innerHTML = `${el.minutes}m`;
 
 			if (el.status) {
-				icon.classList.add(el.status);
+				clone.classList.add(el.status);
 			}
 
 			if (el.is_me) {
