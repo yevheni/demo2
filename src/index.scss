@@ -35,12 +35,17 @@ p {
 }
 
 select {
-	background-color: darken(white, 5);
-	border: 1px solid darken(white, 20);
-	padding: 0.75rem 2rem 0.75rem 1rem;
+	border: 1px solid #DCDDE5;
+	color: #4D5868;
+	padding: 0.75rem 4rem 0.75rem 1rem;
 	border-radius: $border_radius;
 	appearance: none;
 	cursor: pointer;
+	background-repeat: no-repeat, repeat;
+	background-size: 1.5rem;
+	background-position: center right 0.5rem, center;
+	background-color: rgb(255,255,255);
+	background-image: url("./assets/img/arrow-down.svg"), linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,242,246,1) 100%);
 }
 
 /** Helpers */
@@ -104,7 +109,7 @@ select {
 		//font-size: 1.2rem;
 		font-weight: bold;
 		color: $label_color;
-		line-height: 1;
+		//line-height: 1;
 		text-transform: uppercase;
 		//margin-bottom: 1rem;
 	}
