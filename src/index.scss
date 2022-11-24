@@ -112,6 +112,9 @@ select {
 	font-weight: lighter;
 }
 
+.text-left {
+	text-align: left;
+}
 
 /** Elements */
 .card {
@@ -165,6 +168,8 @@ select {
 
 .list {
 	.item {
+		width: 100%;
+		border: 0;
 		background-color: #ffffff;
 		padding: 1.25rem;
 		border-radius: $border_radius;
@@ -177,7 +182,6 @@ select {
 
 		.count {
 			color: $dark_grey;
-			//font-size: 1.4rem;
 			border: 1px solid $dark_grey;
 			border-radius: 3rem;
 			padding: 0.5rem 0.9rem;
@@ -191,6 +195,49 @@ select {
 			height: $size;
 			border-radius: $size;
 			background-color: $grey;
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-color: $dark_grey;
+			color: $white;
+
+			.count {
+				color: $white;
+				border-color: $white;
+			}
+		}
+
+		&.active {
+			.count {
+				color: $green;
+				border-color: $green;
+			}
+
+			.icon {
+				$size: 2rem;
+				width: $size;
+				height: $size;
+				background-color: $transparent;
+				background-image: url("assets/img/arrow-up-green.svg");
+				background-repeat: no-repeat;
+				border-radius: 0;
+				background-position: center;
+				background-size: contain;
+			}
+
+			&:hover {
+				background-color: $green;
+
+				.count {
+					color: $white;
+					border-color: $white;
+				}
+
+				.icon {
+					background-image: url("assets/img/arrow-up-white.svg");
+				}
+			}
 		}
 	}
 }
