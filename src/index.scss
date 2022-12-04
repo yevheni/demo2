@@ -107,6 +107,9 @@ button {
 
 			.active {
 				stroke: $blue;
+				-webkit-transition: stroke-dasharray 0.5s;
+				-moz-transition: stroke-dasharray 0.5s;
+				transition: stroke-dasharray 0.5s;
 			}
 		}
 	}
